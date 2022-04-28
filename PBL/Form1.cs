@@ -29,7 +29,7 @@ namespace PBL
         }
         private void dangnhap()
         {
-            Form2 fn2 = new Form2();
+            Form11 fn2 = new Form11();
             if (txtname.Text.Length == 0 && txtpass.Text.Length == 0)
                 MessageBox.Show("Bạn chưa đăng nhập mật khẩu");
             else

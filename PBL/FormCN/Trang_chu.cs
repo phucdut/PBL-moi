@@ -8,20 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL
+namespace PBL.FormCN
 {
-    public partial class AccProfile : Form
+    public partial class Trang_chu : Form
     {
-        public AccProfile()
+        public Trang_chu()
         {
             InitializeComponent();
         }
 
-        private void butExitProfile_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        
     }
 }

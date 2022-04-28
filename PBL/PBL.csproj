@@ -46,11 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fAdmin.cs">
+    <Compile Include="FormCN\Doanh_thu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAdmin.Designer.cs">
-      <DependentUpon>fAdmin.cs</DependentUpon>
+    <Compile Include="FormCN\Doanh_thu.Designer.cs">
+      <DependentUpon>Doanh_thu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Hang_hoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Hang_hoa.Designer.cs">
+      <DependentUpon>Hang_hoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Ho_so.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Ho_so.Designer.cs">
+      <DependentUpon>Ho_so.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Khach_hang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Khach_hang.Designer.cs">
+      <DependentUpon>Khach_hang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Nhan_vien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Nhan_vien.Designer.cs">
+      <DependentUpon>Nhan_vien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Tai_khoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Tai_khoan.Designer.cs">
+      <DependentUpon>Tai_khoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCN\Trang_chu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCN\Trang_chu.Designer.cs">
+      <DependentUpon>Trang_chu.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -58,31 +94,41 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Form11.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fProfile.Designer.cs">
-      <DependentUpon>fProfile.cs</DependentUpon>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fAdmin.resx">
-      <DependentUpon>fAdmin.cs</DependentUpon>
+    <Compile Include="ThemeColor.cs" />
+    <EmbeddedResource Include="FormCN\Doanh_thu.resx">
+      <DependentUpon>Doanh_thu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Hang_hoa.resx">
+      <DependentUpon>Hang_hoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Ho_so.resx">
+      <DependentUpon>Ho_so.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Khach_hang.resx">
+      <DependentUpon>Khach_hang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Nhan_vien.resx">
+      <DependentUpon>Nhan_vien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Tai_khoan.resx">
+      <DependentUpon>Tai_khoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCN\Trang_chu.resx">
+      <DependentUpon>Trang_chu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fProfile.resx">
-      <DependentUpon>fProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +161,120 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\12321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ppp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_store_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign_out_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_50px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thermos_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member_50px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergency_exit_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1341.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_trash_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_all_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume_website_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_payment_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_payment_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sđá.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1342.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1343.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1344.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test_account_100px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

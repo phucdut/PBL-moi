@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL
+namespace PBL.FormCN
 {
-    public partial class fAdmin : Form
+    public partial class Nhan_vien : Form
     {
-        public fAdmin()
+        public Nhan_vien()
         {
             InitializeComponent();
         }
-
     }
 }

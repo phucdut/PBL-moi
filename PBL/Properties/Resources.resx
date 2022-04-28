@@ -118,13 +118,127 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1211" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_payment_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_payment_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1341.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cafe_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cafe_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="online_store_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\online_store_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_trash_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_trash_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sign_out_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_out_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="12321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cafe_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cafe_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_all_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_all_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="member_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\member_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coffee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coffee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1344" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1344.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emergency_exit_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emergency_exit_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="staff_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="online_payment_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\online_payment_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thermos_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thermos_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1343" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1343.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1342" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resume_website_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resume_website_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="member_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\member_50px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_50px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coffee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coffee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sđá" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sđá.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ppp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ppp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="test_account_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\test_account_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
