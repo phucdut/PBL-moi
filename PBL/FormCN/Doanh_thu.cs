@@ -15,6 +15,7 @@ namespace PBL.FormCN
         public Doanh_thu()
         {
             InitializeComponent();
+            this.text = "Doanh thu";
         }
     }
 }
