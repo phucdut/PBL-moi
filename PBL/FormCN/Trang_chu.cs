@@ -15,6 +15,7 @@ namespace PBL.FormCN
         public Trang_chu()
         {
             InitializeComponent();
+            this.text = "Trang chủ";
         }
 
     }
