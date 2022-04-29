@@ -15,6 +15,7 @@ namespace PBL.FormCN
         public Ho_so()
         {
             InitializeComponent();
+            this.text = "Hồ sơ";
         }
 
         private void button3_Click(object sender, EventArgs e)
