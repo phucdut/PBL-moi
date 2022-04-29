@@ -15,6 +15,7 @@ namespace PBL.FormCN
         public Nhan_vien()
         {
             InitializeComponent();
+            this.text = "Nhân viên";
         }
     }
 }
