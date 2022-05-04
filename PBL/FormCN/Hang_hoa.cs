@@ -15,7 +15,7 @@ namespace PBL.FormCN
         public Hang_hoa()
         {
             InitializeComponent();
-            this.text = "Hàng hóa";
+            this.Text = "Hàng hóa";
         }
     }
 }
