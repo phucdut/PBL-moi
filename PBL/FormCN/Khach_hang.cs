@@ -15,7 +15,7 @@ namespace PBL.FormCN
         public Khach_hang()
         {
             InitializeComponent();
-            this.text = "Khách hàng";
+            this.Text = "Khách hàng";
         }
 
     }
