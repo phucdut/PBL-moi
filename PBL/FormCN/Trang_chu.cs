@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +15,13 @@ namespace PBL.FormCN
         public Trang_chu()
         {
             InitializeComponent();
-            this.text = "Trang chủ";
+            this.Text = "Trang chủ";
         }
 
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Thanh_toan tt = new Thanh_toan();
+            tt.Show();
+        }
     }
 }
