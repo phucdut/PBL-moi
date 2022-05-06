@@ -9,15 +9,17 @@
 -- Hàng hóa(HANG_HOA)
 -- Loại hàng hóa(đồ uống, thức ăn)(LOAI_HANG_HOA)
 
-CREATE DATABASE PBL3
+CREATE DATABASE PBL_SQL3
 GO
-USE PBL3
+USE PBL_SQL3
 GO
 CREATE TABLE KHU_VUC
 (
-    Ma_Khu_Vuc INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ten_Khu_Vuc NVARCHAR(150) NOT NULL,
-	Trang_Thai NVARCHAR(200)  -- ALLOW NULL
+    Ma_Khu_Vuc INT PRIMARY KEY IDENTITY (1,1) 
+	       CHECK (Ma_Khu_Vuc IN (1, 2, 3)) NOT NULL,
+	Ten_Khu_Vuc NVARCHAR(50) 
+	       CHECK (Ten_Khu_Vuc IN (N'Tầng 1', N'Tầng 2', N'Tầng 3')) NOT NULL,
+	Trang_Thai NVARCHAR(100)  -- ALLOW NULL
 )
 GO
 -- Cấp phát dữ liệu cho Khu vực
@@ -31,28 +33,25 @@ GO
 CREATE TABLE BAN
 (
     Ma_Ban INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ten_Ban NVARCHAR(200) NOT NULL,
-	Ma_Khu_Vuc INT NOT NULL,
-    Tinh_Trang NVARCHAR(200) NOT NULL,
+	Ten_Ban NVARCHAR(100) NOT NULL,
+	Ma_Khu_Vuc INT 
+	        CHECK (Ma_Khu_Vuc IN (1, 2, 3)) NOT NULL,
+    Tinh_Trang NVARCHAR(80) 
+	        CHECK (Tinh_Trang IN (N'Trống', N'Đang sử dụng', N'Đang được chọn')) NOT NULL,
 	CONSTRAINT fk_htk_Ma_Khu_Vuc FOREIGN KEY (Ma_Khu_Vuc) REFERENCES KHU_VUC (Ma_Khu_Vuc)
 )
 GO
 -- THÊM dữ liệu cho data Bàn
 INSERT INTO BAN(Ten_Ban, Ma_Khu_Vuc, Tinh_Trang) values  
 (N'BÀN 01',1,N'Trống'),
-(N'BÀN 02',1,N'Trống'),
+(N'BÀN 02',1,N'Đang sử dụng'),
 (N'BÀN 03',1,N'Trống'),
-(N'BÀN 04',1,N'Đã có khách'),
-(N'BÀN 05',1,N'Trống'),
+(N'BÀN 04',2,N'Trống'),
+(N'BÀN 05',2,N'Đang sử dụng'),
 (N'BÀN 06',2,N'Trống'),
-(N'BÀN 07',2,N'Đã có khách'),
-(N'BÀN 08',2,N'Trống'),
-(N'BÀN 09',2,N'Trống'),
-(N'BÀN 10',2,N'Trống'),
-(N'BÀN 11',3,N'Trống'),
-(N'BÀN 12',3,N'Đã có khách'),
-(N'BÀN 13',3,N'Đã có khách'),
-(N'BÀN 14',3,N'Đã có khách');
+(N'BÀN 07',3,N'Trống'),
+(N'BÀN 08',3,N'Đang sử dụng'),
+(N'BÀN 09',3,N'Đang sử dụng');
 GO
 SELECT *FROM dbo.BAN;
 GO
@@ -60,29 +59,33 @@ GO
 CREATE TABLE NHAN_VIEN
 (
     Ma_Nhan_Vien INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ten_Nhan_Vien NVARCHAR(200) NOT NULL,
-	Gioi_Tinh NVARCHAR(50) NOT NULL,
-	Chuc_Vu NVARCHAR(150) NOT NULL,
+	Ten_Nhan_Vien NVARCHAR(100) NOT NULL,
+	Gioi_Tinh NVARCHAR(15) 
+	          CHECK (Gioi_Tinh IN (N'Nam', N'Nữ')) NOT NULL,
+	Chuc_Vu NVARCHAR(80)  
+	          CHECK (Chuc_Vu IN (N'Quản lý', N'Nhân Viên phục vụ',
+			         N'Nhân Viên lễ tân',N'Nhân Viên pha chế', N'Bảo vệ')) NOT NULL,
+	Luong INT NOT NULL,
 	Dia_Chi NVARCHAR(150) NOT NULL,
-	SDT VARCHAR(50) NOT NULL,
-	Phan_Quyen BIT NOT NULL,
-	Mat_Khau VARCHAR(1000) NOT NULL,
+	SDT VARCHAR(15) 
+	      CHECK (SDT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]') NOT NULL,
+	Mat_Khau VARCHAR(7) 
+	      CHECK (Mat_Khau LIKE '[0-9][0-9][0-9][0-9][0-9][0-9]') NOT NULL
 )
 GO
 -- THÊM dữ liệu cho data Nhân Viên
-INSERT INTO NHAN_VIEN(Ten_Nhan_Vien, Gioi_Tinh, Chuc_Vu, Dia_Chi, SDT, Phan_Quyen, Mat_Khau) values
-  (N'Trần Văn Phúc',N'Nam',N'Quản lý',N'111 - Nguyễn Lương Bằng', '0311112222',1,'121212'),
-  (N'Trần Tố Uyên',N'Nữ',N'Nhân Viên phục vụ',N'13 - Nguyễn Lương Bằng', '0987778835',0,'172929'),
-  (N'Trần Hương Giang',N'Nữ',N'Nhân Viên lễ tân',N'15 - Nguyễn Lương Bằng', '0987748835',0,'142929'),
-  (N'Trần Thanh Tú',N'Nữ',N'Nhân Viên lễ tân',N'16 - Nguyễn Lương Bằng', '0987772835',0,'173929'),
-  (N'Trần Ngọc Anh',N'Nữ',N'Nhân Viên pha chế',N'18 - Nguyễn Lương Bằng', '0987771832',0,'175239'),
-  (N'Nguyễn Bảo Nhi',N'Nữ',N'Nhân Viên phục vụ',N'113 - Nguyễn Lương Bằng', '0987778836',0,'171929'),
-  (N'Trần Tuấn Anh',N'Nam',N'Nhân Viên phục vụ',N'138 - Nguyễn Lương Bằng', '0987754835',0,'172923'),
-  (N'Lê Bảo Quốc',N'Nam',N'Nhân Viên pha chế',N'139 - Nguyễn Lương Bằng', '0987770835',0,'178929'),
-  (N'Lê Hoàng Đức',N'Nam',N'Bảo vệ',N'153 - Nguyễn Lương Bằng', '0987778895',0,'172919'),
-  (N'Đặng Trần Côn',N'Nam',N'Bảo vệ',N'138 - Nguyễn Lương Bằng', '0987771835',0,'072929'),
-  (N'Trần Văn Hoàng',N'Nam',N'Nhân Viên phục vụ',N'1333 - Nguyễn Lương Bằng', '0987578863',0,'174921');
-
+INSERT INTO NHAN_VIEN(Ten_Nhan_Vien, Gioi_Tinh, Chuc_Vu, Luong, Dia_Chi, SDT, Mat_Khau) values
+  (N'Trần Văn Phúc',N'Nam',N'Quản lý', 20000000,N'111 - Nguyễn Lương Bằng', '0311112222','121212'),
+  (N'Trần Tố Uyên',N'Nữ',N'Nhân Viên phục vụ', 6000000,N'13 - Nguyễn Lương Bằng', '0987778835','172929'),
+  (N'Trần Hương Giang',N'Nữ',N'Nhân Viên lễ tân', 7000000, N'15 - Nguyễn Lương Bằng', '0987748835','142929'),
+  (N'Trần Thanh Tú',N'Nữ',N'Nhân Viên lễ tân', 7000000, N'16 - Nguyễn Lương Bằng', '0987772835','173929'),
+  (N'Trần Ngọc Anh',N'Nữ',N'Nhân Viên pha chế', 8000000, N'18 - Nguyễn Lương Bằng', '0987771832','175239'),
+  (N'Lê Bảo Quốc',N'Nam',N'Nhân Viên pha chế', 8000000, N'139 - Nguyễn Lương Bằng', '0987770835','178929'),
+  (N'Nguyễn Bảo Nhi',N'Nữ',N'Nhân Viên phục vụ', 6000000, N'113 - Nguyễn Lương Bằng', '0987778836','171929'),
+  (N'Trần Tuấn Anh',N'Nam',N'Nhân Viên phục vụ', 6000000, N'138 - Nguyễn Lương Bằng', '0987754835','172923'),
+  (N'Lê Hoàng Đức',N'Nam',N'Bảo vệ', 5000000, N'153 - Nguyễn Lương Bằng', '0987778895','172919'),
+  (N'Đặng Trần Côn',N'Nam',N'Bảo vệ', 5000000, N'138 - Nguyễn Lương Bằng', '0987771835','072929'),
+  (N'Trần Văn Hoàng',N'Nam',N'Nhân Viên phục vụ', 6000000, N'1333 - Nguyễn Lương Bằng', '0987578863','174921');
 GO
 
 SELECT *FROM dbo.NHAN_VIEN;
@@ -90,17 +93,19 @@ GO
 
 CREATE TABLE LOAI_KHACH_HANG
 (
-    Ma_Loai_Khach_Hang INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ten_Loai_Khach_Hang NVARCHAR(250) NOT NULL,
-	Giam_gia INT NOT NULL
+    Ma_Loai_Khach_Hang INT PRIMARY KEY IDENTITY (1,1) 
+	       CHECK (Ma_Loai_Khach_Hang IN (1, 2, 3, 4)) NOT NULL,
+	Ten_Loai_Khach_Hang NVARCHAR(50) NOT NULL,
+	Giam_Gia INT  
+	       CHECK (Giam_Gia IN (0, 5, 10, 20)) NOT NULL
 )
 GO
 -- THÊM dữ liệu cho data Loại Khách Hàng
 INSERT INTO LOAI_KHACH_HANG( Ten_Loai_Khach_Hang, Giam_gia) values 
-(N'Học sinh - Sinh viên', 10),
-(N'Khách quen - Yêu thích cafe', 5),
-(N'Lao động tự do', 0),
-(N'Nhân viên văn phòng', 5);
+(N'Tiềm năng', 0),
+(N'Bạc', 5),
+(N'Vàng', 10),
+(N'Kim cương', 20);
 GO
 
 SELECT *FROM dbo.LOAI_KHACH_HANG;
@@ -109,41 +114,45 @@ GO
 CREATE TABLE KHACH_HANG
 (
     Ma_Khach_Hang INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ma_Loai_Khach_Hang INT NOT NULL,  -- Khóa ngoại
 	Ten_Khach_Hang NVARCHAR(200) NOT NULL,
-	Dia_Chi NVARCHAR(250) NOT NULL,
-	SDT VARCHAR(50) NOT NULL,
+	Ma_Loai_Khach_Hang INT 
+	      CHECK (Ma_Loai_Khach_Hang IN (1, 2, 3, 4)) NOT NULL,  -- Khóa ngoại
+	Dia_Chi NVARCHAR(150) NOT NULL,
+	SDT VARCHAR(15) 
+	      CHECK (SDT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]') NOT NULL,
 	Diem_Tich_Luy INT NOT NULL, -- ĐIỂM TÍCH LŨY KHI MUA HÀNG
 	CONSTRAINT fk_htk_Ma_Loai_Khach_Hang FOREIGN KEY (Ma_Loai_Khach_Hang) REFERENCES LOAI_KHACH_HANG (Ma_Loai_Khach_Hang)
 )
 GO
 
-INSERT INTO KHACH_HANG(Ma_Loai_Khach_Hang, Ten_Khach_Hang, Dia_Chi, SDT, Diem_Tich_Luy) values 
-(1,N'Trần Văn Phúc', N'20 - Phan Rang', '0932345644', 2),
-(2,N'Trần Văn Phước', N'20 - Điện Biên Phủ', '0936656424', 3),
-(2,N'Lê Tùng Duy', N'28 - Điện Biên Phủ', '0932355654', 3),
-(1,N'Hoàng Phước Dung', N'20 - Ngô Sĩ Liên', '0932545634', 0),
-(3,N'Trần Bích Phương', N'05 - Ngô Sĩ Liên', '0932325461', 1),
-(4,N'Đào Thị Bích Hằng', N'192 - Nguyễn Lương Bằng', '0932341248', 2),
-(4,N'Nguyễn Phước Duy', N'120 - Điện Biên Phủ', '0932317598', 2),
-(4,N'Phàm Ngọc Bích', N'222 - Phan Rang', '0932387692', 1),
-(1,N'Huỳnh Như Sương', N'150 - Điện Biên Phủ', '0931578444', 1);
+INSERT INTO KHACH_HANG(Ten_Khach_Hang, Ma_Loai_Khach_Hang, Dia_Chi, SDT, Diem_Tich_Luy) values 
+(N'Trần Văn Phúc', 1, N'20 - Phan Rang', '0932345644', 20),
+(N'Trần Văn Phước', 2, N'20 - Điện Biên Phủ', '0936656424', 30),
+(N'Lê Tùng Duy', 2, N'28 - Điện Biên Phủ', '0932355654', 30),
+(N'Hoàng Phước Dung', 1, N'20 - Ngô Sĩ Liên', '0932545634', 0),
+(N'Trần Bích Phương', 3, N'05 - Ngô Sĩ Liên', '0932325461', 10),
+(N'Đào Thị Bích Hằng', 4, N'192 - Nguyễn Lương Bằng', '0932341248', 20),
+(N'Nguyễn Phước Duy', 4, N'120 - Điện Biên Phủ', '0932317598', 20),
+(N'Phàm Ngọc Bích', 4, N'222 - Phan Rang', '0932387692', 10),
+(N'Huỳnh Như Sương', 1, N'150 - Điện Biên Phủ', '0931578444', 10);
 
 SELECT *FROM dbo.KHACH_HANG;
 GO
 
 CREATE TABLE LOAI_HANG_HOA
 (
-    Ma_Loai_Hang_Hoa INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
-	Ten_Loai_Hang_Hoa NVARCHAR(150) NOT NULL,
-	Mo_Ta NVARCHAR(150) 
+    Ma_Loai_Hang_Hoa INT PRIMARY KEY IDENTITY (1,1) 
+	           CHECK (Ma_Loai_Hang_Hoa IN (1, 2, 3, 4, 5)) NOT NULL,
+	Ten_Loai_Hang_Hoa NVARCHAR(100)  
+	           CHECK (Ten_Loai_Hang_Hoa IN (N'Cafe', N'Nước ép', N'Sinh tố hoa quả', N'Trà lạnh & trà nóng',N'Sữa chua')) NOT NULL,  -- Khóa ngoại,
+	Mo_Ta NVARCHAR(100) 
 )
 GO
 INSERT INTO LOAI_HANG_HOA(Ten_Loai_Hang_Hoa, Mo_Ta) values 
-(N'Cafe',N'Loại đồ uống trọng tâm của Quán'),
-(N'Nước ép',N'Loại đồ uống Phụ'),
-(N'Sinh tố hoa quả',N'Loại đồ uống lành mạnh, tốt cho sức khỏe'),
-(N'Trà lạnh & trà nóng',N'Loại đồ uống phù hợp với Thời tiết Lạnh - Giải nhiệt'),
+(N'Cafe',N'Loại đồ uống trọng tâm của quán'),
+(N'Nước ép',N'Loại đồ uống trọng tâm thứ 2 của quán'),
+(N'Sinh tố hoa quả',N'Loại đồ uống lành mạnh, tốt cho sức khỏe,...'),
+(N'Trà lạnh & trà nóng',N'Loại đồ uống phù hợp với Giải nhiệt - Thời tiết Lạnh'),
 (N'Sữa chua',N'Đồ uống tốt cho sức khỏe, giảm cân,...');
 GO
 
@@ -154,8 +163,9 @@ CREATE TABLE HANG_HOA
 (
     Ma_Hang_Hoa INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
 	Ten_Hang_Hoa NVARCHAR(150) NOT NULL,
-	Ma_Loai_Hang_Hoa INT NOT NULL,-- KHÓA NGOẠI
-	Hinh_Anh VARCHAR(50) NOT NULL,
+	Ma_Loai_Hang_Hoa INT 
+	         CHECK (Ma_Loai_Hang_Hoa IN (1, 2, 3, 4, 5)) NOT NULL,  -- Khóa ngoại
+	Hinh_Anh VARCHAR(80) NOT NULL,
 	Gia_Hang_Hoa INT NOT NULL,
 	CONSTRAINT fk_htk_Ma_Loai_Hang_Hoa FOREIGN KEY (Ma_Loai_Hang_Hoa) REFERENCES LOAI_HANG_HOA (Ma_Loai_Hang_Hoa)
 )
@@ -198,8 +208,9 @@ CREATE TABLE HOA_DON_BAN_HANG
 	Ma_Khach_Hang INT,-- ALLOW NULL VÀ LÀ KHÓA NGOẠI
 	Date_HDBH DATETIME NOT NULL,
 	Tong_Tien FLOAT NOT NULL,
-	Diem_Tich_Luy INT,-- ALLOW NULL
-	Giam_Gia INT,-- ALLOW NULL
+	Diem_Tich_Luy INT ,-- ALLOW NULL
+	Giam_Gia INT  
+	       CHECK (Giam_Gia IN (0, 5, 10, 20)) NOT NULL, -- ALLOW NULL
 	CONSTRAINT fk_hdbh_Ma_Nhan_Vien FOREIGN KEY (Ma_Nhan_Vien) REFERENCES NHAN_VIEN (Ma_Nhan_Vien),
 	CONSTRAINT fk_hdbh_Ma_Ban FOREIGN KEY (Ma_Ban) REFERENCES BAN (Ma_Ban),
     CONSTRAINT fk_hdbh_Ma_Khach_Hang FOREIGN KEY (Ma_Khach_Hang) REFERENCES KHACH_HANG (Ma_Khach_Hang)
@@ -207,15 +218,15 @@ CREATE TABLE HOA_DON_BAN_HANG
 GO
 
 INSERT INTO HOA_DON_BAN_HANG(Ma_Nhan_Vien, Ma_Ban, Ma_Khach_Hang, Date_HDBH, Tong_Tien, Diem_Tich_Luy, Giam_Gia) values 
-(2,3,1,'2022-04-25 07:35:24',135000, 3, 10),
-(3,2,2,'2022-04-25 08:30:20',190000, 4, 5),
-(2,1,3,'2022-04-25 08:35:24',274550, 4, 5),
-(2,8,4,'2022-04-25 09:30:25',90000, 1, 10),
-(3,8,5,'2022-04-25 10:35:24',300000, 2, 0),
-(2,4,6,'2022-04-25 10:45:30',237500, 3, 5),
-(3,13,7,'2022-04-25 11:00:24',14250, 3, 5),
-(3,10,8,'2022-04-25 11:35:24',19000, 2, 5),
-(3,11,9,'2022-04-25 13:32:11',135000, 2, 10);
+(2,3,1,'2022-04-25 07:35:24',150000, 30, 0),
+(3,2,2,'2022-04-25 08:30:20',200000, 40, 0),
+(2,1,3,'2022-04-25 08:35:24',289000, 40, 0),
+(2,8,4,'2022-04-25 09:30:25',100000, 5, 0),
+(3,8,5,'2022-04-25 10:35:24',300000, 20, 0),
+(2,4,6,'2022-04-25 10:45:30',200000, 30, 0),
+(3,9,7,'2022-04-25 11:00:24',35000, 20, 0),
+(3,4,8,'2022-04-25 11:35:24',20000, 10, 0),
+(3,8,9,'2022-04-25 13:32:11',150000, 20, 0);
 GO
 SELECT *FROM dbo.HOA_DON_BAN_HANG;
 GO
@@ -225,7 +236,7 @@ CREATE TABLE CHI_TIET_HD_BAN_HANG
     Ma_CTHD INT PRIMARY KEY IDENTITY (1,1) NOT NULL,-- MÃ CHI TIẾT HÓA ĐƠN BÁN HÀNG TẠI CHỖ
     Ma_Hoa_Don INT NOT NULL,-- KHÓA NGOẠI
 	Ma_Hang_Hoa INT NOT NULL,-- KHÓA NGOẠI
-	So_Luong INT NOT NULL,
+	So_Luong INT NOT NULL
 	CONSTRAINT fk_hdbh_Ma_Ma_Hoa_Don FOREIGN KEY (Ma_Hoa_Don) REFERENCES HOA_DON_BAN_HANG (Ma_Hoa_Don),
 	CONSTRAINT fk_hdbh_Ma_Hang_Hoa FOREIGN KEY (Ma_Hang_Hoa) REFERENCES HANG_HOA (Ma_Hang_Hoa)
 )
@@ -258,8 +269,9 @@ FROM LOAI_HANG_HOA, HANG_HOA
 WHERE LOAI_HANG_HOA.Ma_Loai_Hang_Hoa = HANG_HOA.Ma_Loai_Hang_Hoa
 AND LOAI_HANG_HOA.Ma_Loai_Hang_Hoa = 1
 
-
-CREATE PROC PROC_XEM_MENU_THEO_DANH_MUC_Hang_Hoa
+-- XEM ĐƠN HÀNG THEO MÃ Hang_Hoa
+--CREATE PROC PROC_XEM_MENU_THEO_Hang_Hoa
+CREATE PROC PROC_XEM_MENU_HANG_HOA
     @Ma_Loai_Hang_Hoa INT
 AS
 BEGIN
@@ -269,7 +281,7 @@ BEGIN
           AND LOAI_HANG_HOA.Ma_Loai_Hang_Hoa = @Ma_Loai_Hang_Hoa
 END
 
-EXEC PROC_XEM_MENU_THEO_DANH_MUC_Hang_Hoa 3
+EXEC PROC_XEM_MENU_HANG_HOA 1
 
 --- HIỂN THỊ danh mục đồ uống trong 1 đơn hàng
 -- Ma_Hoa_Don,Ten_Nhan_Vien,Ten_Khach_Hang, Ten_hang_hoa,giá, số lượng, tổng tiền, ngày mua
